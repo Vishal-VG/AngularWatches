@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 id="h1"> Shopping Cart</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-7 shadow" id="carts">
+            <div class="row" style="border:1px solid gray;border-radius:5px" *ngFor="let cart of data;index as i">
+                <br>
+                    <div class="col-sm-5">    
+                        <br><br>
+                        <div class="d-flex flex-column">
+                        <img [src]="cart.image" alt="img" height="70px" width="auto">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-7">
+                        <br>
+                        <div class="d-flex flex-column">
+                            <h4>{{cart.name}}</h4><div class="mr-auto"></div>
+                            <h6 class="mt-2">{{cart.type}}</h6>
+                            <h5 style="color:green">${{cart.price}}</h5>
+                            <button type="button" class="btn-outline-danger" style="border-radius:10px;width:50%" (click)="deleteItem(cart)" [disabled]>Remove Item</button>
+                        </div>
+                        <br>  
+                    </div>
+                </div>
+        </div>
+        <div class="col-sm-5" id="priceDetails">
+          <div class="row shadow">
+        
+            <h3 class="d-flex justify-content-center">PRICE DETAILS</h3>
+            <hr>
+            <div class=" d-flex justify-content-evenly">
+            <h5>Price({{totalLength}} items)</h5>
+            <h5>$ {{totalAmount}}</h5>
+            </div>
+            <div class=" d-flex justify-content-evenly">
+            <h5>Discount</h5>
+            <h5>-$0</h5>
+            </div>
+            
+            <div class=" d-flex justify-content-evenly">
+            <h5>Delivery charge</h5>
+            <h5>+$0</h5>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-evenly">
+            <h5>Total Amount</h5>
+            <h5>$ {{totalAmount}}</h5>
+            </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

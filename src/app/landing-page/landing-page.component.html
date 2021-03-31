@@ -1,0 +1,21 @@
+<div class="container mb-2">
+    <div class="row">
+        <div class="col-sm-5 border d-flex align-items-center justify-content-center pt-2 pb-2 shadow ">
+          <img [src]="data.image" id="image" class="shadow" height="280px" width="80%">
+        </div>
+        <div class="col-sm-5 d-flex flex-column">
+            <div class="row">
+              <h3 class="col-sm-12" id="name">{{data.name}}</h3>
+            </div>
+            <div>
+              <p class="col-sm-12 d-flex justify-content-start" id="price" >Price: {{data.price}}</p>
+            </div> 
+            <div>
+              <p>rating: <span id="rating">{{data.rating}}</span></p>
+            </div>
+            <div>
+              <p>type: <span id="type">{{data.type}}</span></p>
+            </div>
+        </div>
+        <a type="submit" (click)="addToCart(data)" class="btn btn-success" id="addToCart">add to cart</a>
+</div>
